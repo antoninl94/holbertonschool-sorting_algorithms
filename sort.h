@@ -18,6 +18,20 @@ typedef struct listint_s
     struct listint_s *next;
 } listint_t;
 
+/**
+ * swap_int - swaps the values of two integers
+ * @a: first integer
+ * @b: second integer
+ */
+void swap_int(int *a, int *b)
+{
+	int s;
+
+	s = *a;
+	*a = *b;
+	*b = s;
+}
+
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
 void bubble_sort(int *array, size_t size);
