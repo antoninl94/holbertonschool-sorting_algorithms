@@ -42,3 +42,6 @@ int partition(int *array, size_t low, size_t high)
  * @size: size of the array;
  */
 void quick_sort(int *array, size_t size)
+{
+	print_array(array, size);
+}
