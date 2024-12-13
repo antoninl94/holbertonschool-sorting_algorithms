@@ -5,23 +5,26 @@
  * @a: first element to swap
  * @b: seconde element to swap
  */
-void swap(size_t *a, size_t *b)
+void swap(int *a, int *b)
 {
-	size_t t = *a;
-	size_t *a = *b;
-	*b = t;
+	int temp = *a;
+	*a = *b;
+	*b = temp;
 }
 
-
-
-/**
- * quick_sort - sorts an array of integers in ascending order
- * using the Quick sort algorithm
- * @array: array to sort
- * @size: size of the array
- */
-void quick_sort(int *array, size_t size)
+int partition(int *array, size_t low, size_t high)
 {
-	if (array == NULL || size < 2)
-		return;
+	int pivot = array[high];
+	size_t i = low - 1, j;
+
+	for (j = low; j < high; j++)
+	{
+		if (array[j] <= pivot)
+		{
+			i++;
+			swap(&array[i], &array[j]);
+		}
+	}
+	swap(&array[i + 1], &array[high]);
+	return i + 1;
 }
